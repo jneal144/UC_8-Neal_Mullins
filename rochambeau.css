@@ -29,3 +29,7 @@ body {
 .tie {
     color: grey;
 }
+
+.dropdown {
+    position: relative;
+}

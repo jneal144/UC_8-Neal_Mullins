@@ -18,6 +18,17 @@
         <div class="container">
             <h1>Rock, Paper, Scissors Game</h1>
             <p>Let's Play Rock, Paper Scissors! Press your choice and then press PLAY!.</p>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Rounds per Match </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <button class="dropdown-item" type="button" onclick="setRounds(3)">3</button>
+                    <button class="dropdown-item" type="button" onclick="setRounds(5)">5</button>
+                    <button class="dropdown-item" type="button" onclick="setRounds(7)">7</button>
+                    <button class="dropdown-item" type="button" onclick="setRounds(9)">9</button>
+                    <button class="dropdown-item" type="button" onclick="setRounds(11)">11</button>
+                </div>
+            </div>
+            <p></p>
             <div class="btn-group" role="group" aria-label="...">
                 <button type="button" class="btn btn-default" onclick="storePlayerChoice(0)">Rock</button>
                 <button type="button" class="btn btn-default" onclick="storePlayerChoice(1)">Paper</button>

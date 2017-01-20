@@ -6,9 +6,15 @@ var mScore = [0, 0, 0];
 // 0 = Rock, 1 = Paper, 2 = Scissors
 var playerChoice;
 var computerChoice;
+var rounds = 1; //Variable for rounds per match
+function setRounds(num) {
+    rounds = num;
+    score = [0, 0, 0];
+}
 
 function playGame() {
     // Here is the game ruleset algorithm
+    storeComputerChoice();
     if (playerChoice == computerChoice) {
         // We have a tie!
         console.log("tie");
@@ -87,7 +93,9 @@ function updateMatchScore(val) {
 }
 
 function resetScore() {
-    score = [0, 0, 0];
+    score[0] = 0;
+    score[1] = 0;
+    score[2] = 0;
 }
 
 function displayGameResult(resultId) {
@@ -103,7 +111,7 @@ function displayGameResult(resultId) {
         updateScore(0);
         document.getElementById(resultId).innerHTML = message + "YOU WIN!";
         document.getElementById(resultId).className = "alert alert-success";
-        if (score[0] == 2) {
+        if (score[0] == ((rounds + 1) / 2) && rounds > 1) {
             updateMatchScore(0);
             resetScore();
         }
@@ -113,26 +121,22 @@ function displayGameResult(resultId) {
         // Display that it was a loss
         document.getElementById(resultId).innerHTML = message + "YOU LOOSE! ";
         document.getElementById(resultId).className = "alert alert-danger";
-        if (score[2] == 2) {
+        if (score[2] == ((rounds + 1) / 2) && rounds > 1) {
             updateMatchScore(2);
             resetScore();
         }
     }
-    else if (score[0] == 1 && score[1] == 1 && score[2] == 1) {
-        updateMatchScore(1);
-        resetScore();
-    }
-    else {
+    else if (result == 0) {
         // Display that it was a tie
         updateScore(1);
         document.getElementById(resultId).innerHTML = message + "A tie. ";
         document.getElementById(resultId).className = "alert alert-info";
-        if (score[1] == 2) {
+        if (score[1] == ((rounds + 1) / 2) && rounds > 1) {
             updateMatchScore(1);
             resetScore();
         }
     }
-    if (score[0] == 1 && score[1] == 1 && score[2] == 1) {
+    if (score[0] + score[1] + score[2] == rounds && rounds > 1) {
         updateMatchScore(1);
         resetScore();
     }
