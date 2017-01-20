@@ -18,14 +18,9 @@ function playGame() {
         // Rock beats scissors - a win!
         console.log("win");
         return 1;
-<<<<<<< HEAD
-    } else if (playerChoice == 1 && computerChoice == 0) {
-        // Paper beats rock - a win!
-=======
     }
     else if (playerChoice == 1 && computerChoice == 0) {
-        // Paper beats scissors - a win!
->>>>>>> origin/master
+        // Paper beats rock - a win!
         console.log("win");
         return 1;
     }
@@ -33,33 +28,36 @@ function playGame() {
         // Scissors beats paper - a win!
         console.log("win");
         return 1;
-<<<<<<< HEAD
-    } else if (playerChoice == 2 && computerChoice == 3) {
+    }
+    else if (playerChoice == 2 && computerChoice == 3) {
         console.log("win");
         return 1;
-    } else if (playerChoice == 1 && computerChoice == 4) {
+    }
+    else if (playerChoice == 1 && computerChoice == 4) {
         console.log("win");
         return 1;
-    } else if (playerChoice == 0 && computerChoice == 3) {
+    }
+    else if (playerChoice == 0 && computerChoice == 3) {
         console.log("win");
         return 1;
-    } else if (playerChoice == 3 && computerChoice == 4) {
+    }
+    else if (playerChoice == 3 && computerChoice == 4) {
         console.log("win");
         return 1;
-    } else if (playerChoice == 3 && computerChoice == 1) {
+    }
+    else if (playerChoice == 3 && computerChoice == 1) {
         console.log("win");
         return 1;
-    } else if (playerChoice == 4 && computerChoice == 0) {
+    }
+    else if (playerChoice == 4 && computerChoice == 0) {
         console.log("win");
         return 1;
-    } else if (playerChoice == 4 && computerChoice == 2) {
+    }
+    else if (playerChoice == 4 && computerChoice == 2) {
         console.log("win");
         return 1;
-    } else {
-=======
     }
     else {
->>>>>>> origin/master
         // All other combinations are losses
         console.log("lose");
         return -1;
@@ -148,10 +146,6 @@ function storePlayerChoice(choice) {
 
 function storeComputerChoice() {
     // Generate computer's random choice
-<<<<<<< HEAD
-    computerChoice = Math.floor(Math.random()*5);
-=======
-    computerChoice = Math.floor(Math.random() * 3);
->>>>>>> origin/master
+    computerChoice = Math.floor(Math.random() * 5);
     console.log("Computer choice = " + computerChoice);
 }
