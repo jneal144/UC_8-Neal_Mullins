@@ -77,6 +77,7 @@ function displayGameResult(resultId) {
         document.getElementById(resultId).className = "alert alert-success";
         if (score[0] == 2) {
             updateMatchScore(0);
+            resetScore();
         }
     }
     else if (result == -1) {
@@ -84,12 +85,28 @@ function displayGameResult(resultId) {
         // Display that it was a loss
         document.getElementById(resultId).innerHTML = message + "YOU LOOSE! ";
         document.getElementById(resultId).className = "alert alert-danger";
+        if (score[2] == 2) {
+            updateMatchScore(2);
+            resetScore();
+        }
+    }
+    else if (score[0] == 1 && score[1] == 1 && score[2] == 1) {
+        updateMatchScore(1);
+        resetScore();
     }
     else {
         // Display that it was a tie
         updateScore(1);
         document.getElementById(resultId).innerHTML = message + "A tie. ";
         document.getElementById(resultId).className = "alert alert-info";
+        if (score[1] == 2) {
+            updateMatchScore(1);
+            resetScore();
+        }
+    }
+    if (score[0] == 1 && score[1] == 1 && score[2] == 1) {
+        updateMatchScore(1);
+        resetScore();
     }
 }
 
